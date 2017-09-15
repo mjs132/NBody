@@ -59,9 +59,9 @@ public Planet(Planet p) {
 		double distanceY = this.myYPos - pp.myYPos;
 		double distance = this.calcDistance(pp);
 		double forceY = force * distanceY / distance;
-		if(forceY < 0 && pp.myYPos > this.myYPos) {
+		/*if(forceY < 0 && pp.myYPos > this.myYPos) {
 			forceY += forceY * -2;
-		}
+		}*/
 		return forceY;
 	}
 
