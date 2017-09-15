@@ -45,23 +45,17 @@ public Planet(Planet p) {
 	
 	public double calcForceExertedByX(Planet pp) {
 		double force = this.calcForceExertedBy(pp);
-		double distanceX = this.myXPos - pp.myXPos;
+		double distanceX = pp.myXPos - this.myXPos;
 		double distance = this.calcDistance(pp);
 		double forceX = force * distanceX / distance;
-		/*if(forceX < 0 && pp.myXPos > this.myXPos) {
-			forceX += forceX * -2;
-		}*/
 		return forceX;
 	}
 	
 	public double calcForceExertedByY(Planet pp) {
 		double force = this.calcForceExertedBy(pp);
-		double distanceY = this.myYPos - pp.myYPos;
+		double distanceY = pp.myYPos - this.myYPos;
 		double distance = this.calcDistance(pp);
 		double forceY = force * distanceY / distance;
-		/*if(forceY < 0 && pp.myYPos > this.myYPos) {
-			forceY += forceY * -2;
-		}*/
 		return forceY;
 	}
 
