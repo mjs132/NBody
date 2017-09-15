@@ -51,9 +51,6 @@ public Planet(Planet p) {
 		if(forceX < 0 && pp.myXPos > this.myXPos) {
 			forceX += forceX * -2;
 		}
-		if(forceX > 0 && pp.myXPos < this.myXPos) {
-			forceX += forceX * -2;
-		}
 		return forceX;
 	}
 	
