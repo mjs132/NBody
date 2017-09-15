@@ -48,9 +48,9 @@ public Planet(Planet p) {
 		double distanceX = this.myXPos - pp.myXPos;
 		double distance = this.calcDistance(pp);
 		double forceX = force * distanceX / distance;
-		if(forceX < 0 && pp.myXPos > this.myXPos) {
+		/*if(forceX < 0 && pp.myXPos > this.myXPos) {
 			forceX += forceX * -2;
-		}
+		}*/
 		return forceX;
 	}
 	
