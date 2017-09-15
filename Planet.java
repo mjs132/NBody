@@ -63,12 +63,8 @@ public Planet(Planet p) {
 		double forceX = 0;
 		for (Planet p : allPlanets) {
 			if(!p.equals(this)) {
-				if(p.myXPos > this.myXPos) {
-					forceX += this.calcForceExertedByX(p);
-				}
-				else {
-					forceX -= this.calcForceExertedByX(p);
-				}
+				forceX += this.calcForceExertedByX(p);
+				
 			}
 		}
 		return forceX;
@@ -78,12 +74,7 @@ public Planet(Planet p) {
 		double forceY = 0; 
 		for (Planet p : allPlanets) {
 			if(!p.equals(this)) {
-				if(p.myYPos > this.myYPos) {
-					forceY += this.calcForceExertedByY(p);
-				}
-				else {
-					forceY -= this.calcForceExertedByY(p);
-				}
+				forceY += this.calcForceExertedByY(p);
 			}
 		}
 		return forceY;
