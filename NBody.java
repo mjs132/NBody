@@ -54,9 +54,7 @@ public class NBody {
 		}
 		
 		String fname= "./data/planets.txt";
-		//Planet[] planets = null; // readPlanets(fname);
 		Planet[] planets = readPlanets(fname);
-		//double radius = 0.0; // readRadius(fname);
 		double radius = readRadius(fname);
 		
 		StdDraw.setScale(-radius, radius);

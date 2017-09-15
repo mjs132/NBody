@@ -40,20 +40,15 @@ public Planet(Planet p) {
 		double r = this.calcDistance(pp);
 		double G = 6.67e-11;
 		double force = G * this.myMass * pp.myMass/(r*r);
-		/*if(force < 0) {
-			force += force * -2;
-		}*/
 		return force;
 	}
 	
-	//put all variable to lower case...add my variable in front?
 	public double calcForceExertedByX(Planet pp) {
 		double force = this.calcForceExertedBy(pp);
 		double distanceX = this.myXPos - pp.myXPos;
-		//what about negative???
 		double distance = this.calcDistance(pp);
 		double forceX = force * distanceX / distance;
-		if(forceX < 0) {
+		if(forceX < 0 && pp.myXPos > this.myXPos) {
 			forceX += forceX * -2;
 		}
 		return forceX;
@@ -64,13 +59,12 @@ public Planet(Planet p) {
 		double distanceY = this.myYPos - pp.myYPos;
 		double distance = this.calcDistance(pp);
 		double forceY = force * distanceY / distance;
-		if(forceY < 0) {
+		if(forceY < 0 && pp.myYPos > this.myYPos) {
 			forceY += forceY * -2;
 		}
 		return forceY;
 	}
 
-	//not working yet....might need to know if force is positive or negative
 	public double calcNetForceExertedByX(Planet[] allPlanets){
 		double forceX = 0;
 		for (Planet p : allPlanets) {
