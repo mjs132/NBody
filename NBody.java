@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class NBody {
 	
+	//reads initial information for the file (including size of universe
 	public static double readRadius(String fname) {
 		double rad = 0;
-		try {
+		try { 
 				Scanner scan = new Scanner(new File(fname));
 				scan.nextInt();
 				rad = scan.nextDouble();
@@ -19,7 +20,8 @@ public class NBody {
 			return 0;
 	}
 	
-	public static Planet[] readPlanets(String fname) {
+	//Parses the data from file and creates new planets with the data
+	public static Planet[] readPlanets(String fname) { 
 		try {
 			Scanner scan = new Scanner(new File(fname));
 			int numOfPlanets = scan.nextInt();
@@ -57,11 +59,17 @@ public class NBody {
 		Planet[] planets = readPlanets(fname);
 		double radius = readRadius(fname);
 		
+		//sets up universe with planets and background
 		StdDraw.setScale(-radius, radius);
 		StdDraw.picture(0,0,"images/starfield.jpg");
 		for(Planet p : planets) {
 			Planet.draw(p.myXPos, p.myYPos, p.myFileName);
 		}
+		/*
+		 * while the time is less than total time it updates 
+		 * the planets location and draws new planet on top
+		 * of a new background
+		*/
 		for(double t = 0.0; t < totalTime; t += dt) {
 			double[] xForces = new double[planets.length];
 			double[] yForces = new double[planets.length];
